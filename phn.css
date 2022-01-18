@@ -1,0 +1,128 @@
+.main_div {
+    width: 86%;
+    height: 100%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.music_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 79rem;
+    height: 70%;
+
+    border-radius: 2rem;
+    box-shadow: 0 1.2rem 3rem 0.5rem rgb(0 0 0 / 20%);
+    padding: 1rem;
+    text-align: center;
+}
+.music_container #title {
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    word-spacing: 0.5rem;
+    
+    margin: 0.3rem 0 0.5rem 0;
+    font-size: 1.5rem;
+    font-weight: 500;
+
+}
+.music_container #artist {
+  
+    text-transform: capitalize;
+    letter-spacing: 0.1rem;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    font-weight: 300;
+}
+#imgplay {
+    width: 34%;
+}
+.music_controls {
+    width: 15rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    margin-top: 3rem;
+}
+.music_controls .fas {
+ 
+    font-size: 1.5rem;}
+.music_controls .main_button {
+    width: 3rem;
+    
+    height: 3rem;
+   font-size: 0.9rem;
+  
+   border-radius: 50%;
+ 
+ 
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   
+}
+#slider_container{
+    display: flex;
+    margin: auto;
+    width: 56% !important;
+    justify-content: center;
+    align-items: center;
+}
+.hd_pop {
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    word-spacing: 0.5rem;
+   
+    margin: 2rem 0 0.5rem 0;
+    font-size: 1.5rem;
+    font-weight: 400;
+  
+}
+.music-container {
+    width: 7rem;
+    height: auto;
+    
+    border-radius: 2rem;
+    
+    padding: 0.3rem;
+    text-align: center;
+}
+.music-container #title_ {
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    word-spacing: 0.5rem;
+
+    margin: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+
+}
+.music-container #artist_ {
+ 
+    text-transform: capitalize;
+    letter-spacing: 0.1rem;
+    font-size: 14px;
+    margin-bottom: 0.4rem;
+    font-weight: 300;
+}
+.playsmall {
+    margin: 8%;
+    border-radius: 20px;
+    border: 2px;
+    width: 52%;
+    height: 13%;
+
+    letter-spacing: 0.2rem;
+    word-spacing: 0.5rem;
+   
+    font-size: 0.8rem;
+    font-weight: 500;
+  
+}
+#carouselExampleDark{
+    display: none;
+}

@@ -1,0 +1,86 @@
+#srchbtn{
+    color: #000000;
+    border-color: #8cd8d0;
+    background-color:#43c9bb ;
+
+}
+.popular_music {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #4e4e4e;
+    flex-direction: column;
+}
+.midplayer{
+    margin-top: -1px;
+    background: #000000eb;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#navbar-original{
+    background: #2f2e2e !important;
+    color: white !important;
+}
+.music_container{
+    background: url(images/bgmid.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0;
+}
+.navbar-brand{
+    color: white !important;
+
+}
+#headphoneImg{
+    filter: invert(5) !important;
+}
+.music_container #title{
+    color: white;
+}
+.music_controls .fas{
+    color: rgb(248, 248, 248);
+}
+.music_controls .main_button{
+    color: #000000;
+    background-color: #a0ddd7;
+}
+.current-time, .total-duration{
+    color: white;
+}
+.current-time, .total-duration{
+    color: white;
+}
+i.fa-volume-down, i.fa-volume-up{
+    color: white;
+}
+i.fa-volume-down, i.fa-volume-down{
+    color: white;
+}
+.carousel-inner{
+    background: url(images/darkbg2.jpg) !important;
+    background-position: center   !important;
+    background-repeat: no-repeat  !important;
+    background-size: cover  !important;
+    border-radius: 0;
+}
+.music-container {
+    width: 15rem;
+    height: 21rem;
+    background-color: #030202;
+    border-radius: 2rem;
+    box-shadow: 0 1.2rem 3rem 0.5rem rgb(0 0 0 / 20%);
+    padding: 1.5rem;
+    text-align: center;
+}
+.artist_{
+    color: #4741a2e0;
+}
+.music-container #title_ {
+    color: #4741a2e0;
+}
+#offcanvasScrolling{
+
+    background: #000000ab;
+}

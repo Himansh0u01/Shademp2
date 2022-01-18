@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- <link rel="stylesheet" href="bottomplayer.css"> -->
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="popularmusic.css" />
+    <link rel="stylesheet" href="light.css" />
+    <link
+      rel="stylesheet"
+      href="phn.css"
+      media="only screen and (max-width: 1000px)"
+    />
+    <title>Document</title>
+  </head>
+
+  <body style="top: 0; margin: 0;">
+    <nav
+      id="navbar-original"
+      class="navbar navbar-expand-lg navbar-light bg-light"
+    >
+      <div class="container">
+        <a
+          class="navbar-brand"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasExample"
+          aria-controls="offcanvasExample"
+          href="#"
+        >
+          <img
+            id="headphoneImg"
+            src="logo1-removebg-preview.png"
+            width="77px"
+            height="43px"
+            alt=""
+          />
+          SHADE
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a
+                style="display: none !important"
+                id="offbytn"
+                class="btn btn-primary"
+                type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasScrolling"
+                aria-controls="offcanvasScrolling"
+                class="nav-link active"
+                aria-current="page"
+                href="#"
+                >Home</a
+              >
+            </li>
+           
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+           category
+              </a>
+              <ul style="padding: 12px; padding-top: 2px;" class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li
+                  style="
+                    text-align: center;
+                    background: black;
+                    color: white;
+                    border-radius: 4px;
+                  "
+                >
+                  <a  style="    color: white; "class="dropdown-item" href="#tpunjab">punjabi</a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li
+                  style="
+                    text-align: center;
+                    background: black;
+                    color: white;
+                    border-radius: 4px;
+                  "
+                >
+                  <a style="    color: white; " class="dropdown-item" href="#tenglish">english</a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li
+                  style="
+                    text-align: center;
+                    background: black;
+                    color: white;
+                    border-radius: 4px;
+                  "
+                >
+                  <a style="    color: white; "class="dropdown-item" href="#tphu">top</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link ">QUERY</a>
+            </li>
+          </ul>
+          <form class="d-flex">
+            <input
+              style="border-radius: 50px"
+              class="form-control me-2"
+              type="search"
+              placeholder="Search music"
+              aria-label="Search"
+            />
+            <button
+              id="srchbtn"
+              style="border-radius: 50px; color: #000000; border-color: #a1ded8"
+              class="btn btn-outline-success"
+              type="submit"
+            >
+              Search
+            </button>
+            <div onclick="modebtn()" id="modebtn">&#9790;</div>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="midplayer">
+      <div class="main_div">
+        <div style="display: none" class="animation-radio">
+          <video
+            style="width: 100%"
+            id="vedeo1"
+            src="video/Stereo - 51529.mp4"
+            type="video/mp4"
+          ></video>
+        </div>
+        <div class="music_container">
+          <h1 id="title" class="artist">A.Walker</h1>
+          <h3 id="artist" class="music-name">O.O.L</h3>
+          <div class="image_container">
+            <img id="imgplay" src="images/music1.jpg" alt="" />
+          </div>
+          <audio id="music1" src="music/music1.mp3"></audio>
+          <div class="music_controls">
+            <i onclick="playprev()" class="fas fa-backward"></i>
+            <i
+              onclick="playitmain()"
+              id="play122"
+              class="fas fa-play main_button"
+            ></i>
+            <i onclick="playnext()" class="fas fa-forward"></i>
+          </div>
+          <div
+            style="
+              display: flex;
+              width: 94%;
+              justify-content: center;
+              align-items: center;
+            "
+            class="slider_container"
+          >
+            <div class="current-time">00:00</div>
+            <input
+              type="range"
+              min="1"
+              max="100"
+              value="0"
+              class="seek_slider"
+              onchange="seekTo()"
+            />
+            <div class="total-duration">00:00</div>
+          </div>
+
+          <!-- Define the section for displaying the volume slider-->
+          <div
+            id="slider_container"
+            style="margin: auto; width: 21%"
+            class="slider_container"
+          >
+            <i class="fa fa-volume-down"></i>
+            <input
+              type="range"
+              min="1"
+              max="100"
+              value="99"
+              class="volume_slider"
+              onchange="setVolume()"
+            />
+            <i class="fa fa-volume-up"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- cousel -->
+    <div
+      id="carouselExampleDark"
+      class="carousel carousel-dark slide"
+      data-bs-ride="carousel"
+    >
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#carouselExampleDark"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleDark"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleDark"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
+      </div>
+      <div
+        style="
+          background: url(images/guitars-2912447_1920.jpg);
+          background-position: center;
+          background-attachment: scroll;
+          background-size: cover;
+          background-blend-mode: darken;
+          width: 100%;
+          height: 30%;
+        "
+        class="carousel-inner"
+      >
+        <div class="carousel-item active" data-bs-interval="10000">
+          <div style="justify-content: center" class="container d-flex">
+            <img
+              style="height: 26rem"
+              src="images/slide3.jpg"
+              class="d-block w-70"
+              alt="..."
+            />
+          </div>
+          <div class="carousel-caption d-none d-md-block">
+            <!-- <h1 style="color: white;">Alen walker </h1>
+            <h5 style="color: white;"></h5>
+            <p style="color:white">Some representative placeholder content for the first slide.</p> -->
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+          <div style="justify-content: center" class="container d-flex">
+            <img
+              style="height: 26rem"
+              src="images/slide2.jpg"
+              class="d-block w-70"
+              alt="..."
+            />
+          </div>
+          <div class="carousel-caption d-none d-md-block">
+            <h1 style="color: white;">Alan walker </h1>
+            <h5 style="color: white;"></h5>
+            <p style="color:white">There are always going to be haters.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div style="justify-content: center" class="container d-flex">
+            <img
+              style="height: 26rem"
+              src="images/slide1.jpg"
+              class="d-block w-70"
+              alt="..."
+            />
+          </div>
+          <div class="carousel-caption d-none d-md-block">
+            <h1 style="color: white;">Alan walker </h1>
+            <h5 style="color: white;"></h5>
+            <p style="color:white">Everything is theoretically impossible, until it is done.</p>
+          </div>
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleDark"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleDark"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <div class="popular_music">
+      <div id="trending" class="heading_popularmusic">
+        <h1 id="tphu" class="hd_pop">TRENDING</h1>
+      </div>
+      <div class="top_haryanvi">
+        <div class="main-div">
+          <div class="music-container">
+            <h1 id="title_" class="artist_">arijit</h1>
+            <h3 id="artist_" class="music-name">sandle</h3>
+            <div class="image-container">
+              <img id="img-play" src="images/music8.jpg" alt="" />
+            </div>
+            <button onclick="play2(7)" class="playsmall">play</button>
+          </div>
+        </div>
+        <div class="main-div">
+          <div class="music-container">
+            <h1 id="title_" class="artist_">arijit</h1>
+            <h3 id="artist_" class="music-name">sandle</h3>
+            <div class="image-container">
+              <img id="img-play" src="images/music9.jpg" alt="" />
+            </div>
+            <button onclick="play2(8)" class="playsmall">play</button>
+          </div>
+        </div>
+        <div class="main-div">
+          <div class="music-container">
+            <h1 id="title_" class="artist_">arijit</h1>
+            <h3 id="artist_" class="music-name">sandle</h3>
+            <div class="image-container">
+              <img id="img-play" src="images/music10.jpg" alt="" />
+            </div>
+            <button onclick="play2(9)" class="playsmall">play</button>
+          </div>
+        </div>
+        <div class="main-div">
+          <div class="music-container">
+            <h1 id="title_" class="artist_">arijit</h1>
+            <h3 id="artist_" class="music-name">sandle</h3>
+            <div class="image-container">
+              <img id="img-play" src="images/music11.jpg" alt="" />
+            </div>
+            <button onclick="play2(10)" class="playsmall">play</button>
+          </div>
+        </div>
+        <div class="main-div">
+          <div class="music-container">
+            <h1 id="title_" class="artist_">arijit</h1>
+            <h3 id="artist_" class="music-name">sandle</h3>
+            <div class="image-container">
+              <img id="img-play" src="images/music12.jpg" alt="" />
+            </div>
+            <button onclick="play2(11)" class="playsmall">play</button>
+          </div>
+        </div>
+      </div>
+      <div class="heading_popularmusic">
+        <h1 id="tpunjab" class="hd_pop">TOP PUNJABI</h1>
+      </div>
+      <div class="top_haryanvi">
+        <div class="main-div">
+          <div class="music-container">
+            <h1 id="title_" class="artist_">jANNI-ve</h1>
+            <h3 id="artist_" class="music-name">apsara</h3>
+            <div class="image-container">
+              <img id="img-play" src="images/music3.jpg" alt="" />
+            </div>
+            <button onclick="play2(2)" class="playsmall">play</button>
+          </div>
+        </div>
+        <div class="main-div">
+          <div class="music-container">
+            <h1 id="title_" class="artist_">jawani</h1>
+            <h3 id="artist_" class="music-name">dilpreet</h3>
+            <div class="image-container">
+              <img id="img-play" src="images/music4.jpg" alt="" />
+            </div>
+            <button onclick="play2(3)" class="playsmall">play</button>
+          </div>
+        </div>
+        <div class="main-div">
+          <div class="music-container">
+            <h1 id="title_" class="artist_">BISMILLAH</h1>
+            <h3 id="artist_" class="music-name">a-mann</h3>
+            <div class="image-container">
+              <img id="img-play" src="images/music5.jpg" alt="" />
+            </div>
+            <button onclick="play2(4)" class="playsmall">play</button>
+          </div>
+        </div>
+        <div class="main-div">
+          <div class="music-container">
+            <h1 id="title_" class="artist_">Pasand</h1>
+            <h3 id="artist_" class="music-name">gurnam</h3>
+            <div class="image-container">
+              <img id="img-play" src="images/music6.jpg" alt="" />
+            </div>
+            <button onclick="play2(5)" class="playsmall">play</button>
+          </div>
+        </div>
+        <div class="main-div">
+          <div class="music-container">
+            <h1 id="title_" class="artist_">karda</h1>
+            <h3 id="artist_" class="music-name">G-khan</h3>
+            <div class="image-container">
+              <img id="img-play" src="images/music7.jpg" alt="" />
+            </div>
+            <button onclick="play2(6)" class="playsmall">play</button>
+          </div>
+        </div>
+      </div>
+      <div class="heading_popularmusic">
+        <h1 id="tenglish" class="hd_pop">TOP ENGLISH</h1>
+      </div>
+      <div class="top_haryanvi">
+        <div class="main-div">
+          <div class="music-container">
+            <h1 id="title_" class="artist_">Bad-Guy</h1>
+            <h3 id="artist_" class="music-name">Billie Eilish</h3>
+            <div class="image-container">
+              <img id="img-play" src="images/music13.jpg" alt="" />
+            </div>
+            <button onclick="play2(2)" class="playsmall">play</button>
+          </div>
+        </div>
+        <div class="main-div">
+          <div class="music-container">
+            <h1 id="title_" class="artist_">On my way</h1>
+            <h3 id="artist_" class="music-name">A.Walker</h3>
+            <div class="image-container">
+              <img id="img-play" src="images/music14.jpg" alt="" />
+            </div>
+            <button onclick="play2(13)" class="playsmall">play</button>
+          </div>
+        </div>
+        <div class="main-div">
+          <div class="music-container">
+            <h1 id="title_" class="artist_">Faded</h1>
+            <h3 id="artist_" class="music-name">A.Walker</h3>
+            <div class="image-container">
+              <img id="img-play" src="images/music15.jpg" alt="" />
+            </div>
+            <button onclick="play2(14)" class="playsmall">play</button>
+          </div>
+        </div>
+        <div class="main-div">
+          <div class="music-container">
+            <h1 id="title_" class="artist_">Alone</h1>
+            <h3 id="artist_" class="music-name">A.Walker</h3>
+            <div class="image-container">
+              <img id="img-play" src="images/music16.jpg" alt="" />
+            </div>
+            <button onclick="play2(15)" class="playsmall">play</button>
+          </div>
+        </div>
+        <div class="main-div">
+          <div class="music-container">
+            <h1 id="title_" class="artist_">O.O.L</h1>
+            <h3 id="artist_" class="music-name">A.walker</h3>
+            <div class="image-container">
+              <img id="img-play" src="images/music17.jpg" alt="" />
+            </div>
+            <button onclick="play2(16)" class="playsmall">play</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- offf canvas -->
+
+    <div
+      style="
+        height: 400px;
+        height: 323px;
+        top: 35px;
+        left: 39%;
+
+        border-radius: 11px;
+      "
+      class="offcanvas offcanvas-start"
+      tabindex="-1"
+      id="offcanvasExample"
+      aria-labelledby="offcanvasExampleLabel"
+    >
+      <div class="offcanvas-header">
+        <h3 id="title_" class="artist_">SHADE MUSIC</h3>
+        <button
+          type="button"
+          class="btn-close text-reset"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="headeroff">
+          <img style="margin: 5px" src="images/login.png" alt="" />
+          <a class="logsig" href="login.html">LOGIN /</a>
+          <a class="logsig" href="signup.html">SIGN UP</a>
+          <div class="nightdaymode">
+            <div onclick="nightmode()" class="rollbtn"></div>
+          </div>
+        </div>
+        <hr />
+        <div class="quickaccess">
+          <div class="headingquic">welcome</div>
+
+          <!-- <a href="#tpunjab" onclick="trending()" class="types_song">HARYANVI</a> -->
+          <div class="types_song">
+            <p style="margin: 0">
+              welcome to our music website, signup to our website for download
+              music
+            </p>
+          </div>
+          <!-- <div class="types_song">BOLYWOOD</div> -->
+        </div>
+      </div>
+    </div>
+
+    <!-- mini player -->
+
+    <div
+      style="
+        z-index: 52000;
+        height: 9vh !important;
+        display: flex;
+        justify-content: center;
+      "
+      class="offcanvas offcanvas-bottom"
+      data-bs-scroll="true"
+      data-bs-backdrop="false"
+      tabindex="-1"
+      id="offcanvasScrolling"
+      aria-labelledby="offcanvasScrollingLabel"
+    >
+      <div class="offcanvas-header">
+        <div
+          style="
+            display: flex;
+            width: 94%;
+            justify-content: center;
+            align-items: center;
+          "
+          class="slider_container"
+        >
+          <!-- <div id="currenttime2" class="current-time">00:00</div> -->
+          <input
+            id="volume_slider2"
+            type="range"
+            min="1"
+            max="100"
+            value="0"
+            class="seek_slider"
+            onchange="seekTo2()"
+          />
+          <!-- <div id="totaltime2" class="total-duration">00:00</div> -->
+        </div>
+
+        <div
+          style="display: flex; justify-content: center"
+          class="slider_container"
+        >
+          <input
+            id="volume_slider6"
+            type="range"
+            min="1"
+            max="100"
+            value="99"
+            class="volume_slider"
+            onchange="setVolume2()"
+          />
+        </div>
+
+        <button
+          style="display: none"
+          id="cffbytn"
+          type="button"
+          class="btn-close text-reset"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+    </div>
+
+    <script src="jquery-3.6.0.js"></script>
+    <script src="listmusic.js"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+      integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+      integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+      crossorigin="anonymous"
+    ></script>
+    <script src="main.js"></script>
+  </body>
+</html>
